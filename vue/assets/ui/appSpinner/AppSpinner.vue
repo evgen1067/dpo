@@ -1,0 +1,63 @@
+<template>
+  <div class="spinner"></div>
+</template>
+
+<script>
+export default {
+  name: 'AppSpinner',
+};
+</script>
+
+<style scoped>
+.spinner {
+  position: absolute;
+  left: 46%;
+  top: 40%;
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 8px solid lightgray;
+  border-top: 8px solid var(--bs-dark);
+  border-bottom: 8px solid var(--bs-dark);
+  animation: anime 1.4s ease infinite;
+  cursor: default;
+}
+@keyframes anime {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner::before {
+  position: absolute;
+  content: '';
+  width: 200%;
+  height: 200%;
+  left: 50%;
+  top: 50%;
+  border-radius: inherit;
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+  border: 10px solid lightgray;
+  border-left: 10px solid var(--bs-dark);
+  border-right: 10px solid var(--bs-dark);
+}
+.spinner::after {
+  position: absolute;
+  content: '';
+  width: 300%;
+  height: 300%;
+  left: 50%;
+  top: 50%;
+  border-radius: inherit;
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+  border: 12px solid lightgray;
+  border-top: 12px solid var(--bs-dark);
+  border-bottom: 12px solid var(--bs-dark);
+}
+</style>
